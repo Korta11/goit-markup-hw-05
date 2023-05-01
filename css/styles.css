@@ -83,8 +83,7 @@ ul {
 
 .nav-list-link {
   padding: 24px 0;
-
-  color: var(--accent-site-color);
+  color: #2e2f42;
   size: 12px;
   line-height: 16px;
   text-decoration: none;
@@ -93,11 +92,77 @@ ul {
   letter-spacing: 0.02em;
   font-style: normal;
   list-style: none;
-}
 
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .nav-list-link:hover,
 .nav-list-link:focus {
-  color: var(--acent-focus-color);
+  color: #404bbf;
+}
+.nav-studi {
+  padding: 24px 0;
+  color: #2e2f42;
+  size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-style: normal;
+  list-style: none;
+
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-studi::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+.nav-studi:hover,
+.nav-studi:focus {
+  color: #404bbf;
+}
+
+.nav-portfolio {
+  padding: 24px 0;
+  color: #2e2f42;
+  size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-style: normal;
+  list-style: none;
+
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-portfolio::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+.nav-portfolio:hover,
+.nav-portfolio:focus {
+  color: #404bbf;
 }
 
 /* AUT_NAV */
@@ -116,6 +181,7 @@ ul {
   letter-spacing: 0.02em;
   font-style: normal;
   list-style: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .aut-item-link:hover,
 .aut-item-link:focus {
@@ -179,6 +245,8 @@ ul {
   cursor: pointer;
   color: #ffffff;
   background-color: #4d5ae5;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover,
@@ -289,6 +357,8 @@ ul {
   height: 100%;
   background-color: #4d5ae5;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social:hover,
 .social:focus {
@@ -321,19 +391,22 @@ ul {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   color: #8e8f99;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.customers-link:hover,
+.customers-link:focus {
+  border: 1px solid #404bbf;
+  color: #404bbf;
 }
 
 .customers-leter {
   width: 104px;
   height: 56px;
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers-link:hover,
-.customers-link:focus {
-  border: 1px solid #404bbf;
-  color: #404bbf;
-}
 .customers-leter:hover {
   color: #404bbf;
 }
@@ -385,6 +458,11 @@ ul {
   cursor: pointer;
   color: #4d5ae5;
   background-color: #f4f4fd;
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
@@ -396,6 +474,18 @@ ul {
 }
 
 /* PORTFOLIO_main */
+.card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  width: 296px;
+  height: 96px;
+  padding-left: 32px;
+  padding-top: 40px;
+  margin: 0;
+}
+
 .app-servis-buy {
   display: flex;
   flex-wrap: wrap;
@@ -406,8 +496,39 @@ ul {
 .app-item {
   width: calc((100% - 48px) / 3);
 }
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.product-action {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #4d5ae5;
+  opacity: 0;
+  /* transform: translate(-50%, -50%); */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-item:hover .product-action,
+.app-item:focus .product-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .app-item-link {
   display: block;
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .app-item-link:hover,
 .app-item-link:focus {
@@ -494,11 +615,13 @@ ul {
   height: 100%;
   background-color: #4d5ae5;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social:hover,
 .footer-social:focus {
   background-color: #31d0aa;
 }
+
 .footer-leter {
   fill: #f4f4fd;
 }
