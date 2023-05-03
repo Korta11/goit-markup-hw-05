@@ -701,10 +701,11 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 32px;
-  right: 32px;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
+  cursor: pointer;
   border-radius: 50%;
   border-color: #e7e9fc;
   padding: 0;
